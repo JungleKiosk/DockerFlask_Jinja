@@ -1,0 +1,18 @@
+### It starts with the 1st connection to the DB
+
+In order to display the name of the relevant 'cosmos' in the DOM when each 'cosmos' is clicked [Animals, Cyber, Plants, Urban],
+it is necessary to declare a cosmos variable to be inserted in the route:
+
+@app.route('/items')
+def get_items():
+    return render_template('home/cosmos/items.html')
+
+@app.route('/item')
+def get_item():
+    return render_template('home/cosmos/item.html')
+
+
+
+
+- [] 
+- []
