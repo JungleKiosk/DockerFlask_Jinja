@@ -3,8 +3,8 @@ This project is an example of how to use Docker to create and distribute a Pytho
 
 # 1st step - Setting Project
 ## Project Files
-```
 commit: initial commit
+```
 d776e8a2ca1ab3ba5c81a26c6c352720491f5020
 ```
 First, the directory must be created:
