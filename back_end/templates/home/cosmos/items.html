@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}
+Cosmos
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <h1>Items Animals</h1><!-- {{cosmo}}  -->
+    <div id="tags">
+        <span class="btn rounded-pill text-bg-primary pointer"
+            data-val>tag</span>
+    </div>
+    <div class="row justify-content-center mt-4" id="article-container">
+        <div class="col-12 col-lg-4 text-center text-dark mb-3"
+            data-val>
+            <div class="card text-left bg-dark text-white">
+                <div class="card-body">
+                    <h4 class="card-title"></h4>
+                    <br>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit. Adipisci dolores corporis modi aut
+                        ullam placeat cum. Eos quod sunt odit debitis dolor
+                        suscipit corporis accusamus, rem, doloremque voluptas
+                        consequuntur deleniti.
+                    </p>
+                    <span
+                        class="badge badge-md rounded-pill text-bg-primary pointer"
+                        data-val="">tag</span>
+                    <br>
+                    <br>
+                    <a class="btn btn-primary btn-read-more"
+                        href="">Read more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
