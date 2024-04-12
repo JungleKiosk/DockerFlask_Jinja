@@ -65,6 +65,7 @@ After setting up the basic Flask application, the next step was to create a rout
 
 The Flask application was set up with a **simple route defined for the root URL ('/')**. When accessing this route, the application returns a plain text response of "Hello!".
 
+main.py
 ```
 from flask import Flask
 
@@ -86,6 +87,7 @@ ac04ed4f0cd8956f12deb9a01bc13a86c243fb4f
 
 Flask's `render_template` function allows HTML templates to be rendered within the Flask application.
 
+main.py
 ```
 from flask import Flask, render_template
 
@@ -98,10 +100,99 @@ def hello():
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
 ```
+
+base.html
+```
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<style>
+    body{
+        background-color: black;
+        color: rgb(255, 255, 255);
+    }
+</style>
+
+<body>
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+```
+
+home.html
+
+```
+{% extends "base.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-6 text-center">
+            <h1>Hello Jinja! ⛩️</h1>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+```
 ![hello_img](/back_end/assets/img/readme/hello_jinja.png)
 
 Now, instead of `return`ing a simple textual response, the main route ('/') has been modified to render an HTML template called home.html located in the home directory. <br>
 When a user accesses the main route, the browser will display the contents of the HTML `return`ed by the template. This allows objects in the DOM (Document Object Model) to be displayed within the browser.
+
+**But... What is that base.html file? 🌳🦥🌳**
+
+### **Using Jinja Blocks {% block %} ⛩️**
+In the base.html template, the concept of Jinja {% block %} blocks is used. These blocks allow you to define portions of content within a template that can be overwritten or extended by other templates that extend the base template.
+
+**Why is it convenient to use?**
+1. **Code Organisation**: Using Jinja blocks, it is possible to organise HTML code into reusable forms. The basic template base.html defines the basic structure of the web page, while other templates, such as home.html, extend the basic template and overwrite or extend the defined blocks.
+
+2. **Code Reuse:** Jinja blocks avoid duplication of HTML code. For example, the header and footer are defined in the base template and can be reused in all other templates without having to re-implement them.
+
+3. **Customising Templates:** Jinja blocks make it easy to customise templates without having to modify the base template.<br>
+For example, in the template home.html, the `{% block title %}` has been overwritten to define a specific title for the Home page, while the `{% block content %}` has been extended to add the specific content of the Home page.
+
+> [!NOTE]
+> The use of Jinja blocks makes it possible to keep the code clean, organised and easily modifiable, thus improving the maintainability and flexibility of the project.
+
+basic template Jinja ⛩️🥷
+```
+{% extends "base.html" %}
+
+{% block title %}
+Page Title
+{% endblock %}
+
+
+{% block content %}
+
+HTML code
+
+{% endblock %}
+```
 
 > [!IMPORTANT]
 > Flask is closely related to [Jinja2](https://jinja.palletsprojects.com/en/3.1.x/), since Jinja2 is the default template engine used by Flask to render dynamic HTML templates. This is how they are related:
