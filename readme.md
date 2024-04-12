@@ -1,16 +1,16 @@
 # Docker Python Flask PostgreSQL
-This project is an example of how to use Docker to create and distribute a Python web application based on Flask.
+This project is an example of how to use Docker to create and distribute a Python web application based on [Flask](https://flask.palletsprojects.com/en/3.0.x/).
 
 # 1st step - Setting Project
 ## Project Files
 First, the directory must be created:
 
-back_end|
-        |-Dockerfile
-        |-main.py
-        |-requirements.txt
-docker-compose.yml
-readme.md
+back_end|<br>
+        |-Dockerfile<br>
+        |-main.py<br>
+        |-requirements.txt<br>
+docker-compose.yml<br>
+readme.md<br>
 
 > [!TIP]
 > you can call the main folders your own but usually use 'back_end' , 'front_end'....
@@ -30,11 +30,11 @@ The requirements.txt file lists all the Python dependencies needed to run the Fl
 ## docker-file.yml
 The file docker-compose.yml is used to define and manage the Docker services within the project. In this case, the file contains two services:
 
-> **Web service:** This service defines a **container** for the Flask web application. It uses the Dockerfile located in the back_end directory to create the **Docker image**.<br>
+- **Web service:** This service defines a **container** for the Flask web application. It uses the Dockerfile located in the back_end directory to create the **Docker image**.<br>
 It mounts the back_end directory as a **volume** inside the **container** to allow access to the application's source code. It exposes port 5000 of the **container** to allow access to the web application.<br>
 It also defines some environment variables that the Flask application will use for configuration, such as DEBUG, PORT and the credentials for the PostgreSQL database.
 
-> **db service:** This service uses the default Docker image of PostgreSQL. It exposes port 5432 to allow access to the database. It sets environment variables to configure the database, such as the **user**, **password** and **database name**.
+- **db service:** This service uses the default Docker image of PostgreSQL. It exposes port 5432 to allow access to the database. It sets environment variables to configure the database, such as the **user**, **password** and **database name**.
 
 > [!NOTE]
 > The web service depends on the db service, which means that Docker Compose will first start the db service before starting the web service.
@@ -61,7 +61,7 @@ ac04ed4f0cd8956f12deb9a01bc13a86c243fb4f
 ```
 
 # 2nd step - Flask routes & Template imports
-After setting up the basic Flask application, the next step was to create a route and render it using the `render_template` function.
+After setting up the basic Flask application, the next step was to create a route and render it using the [render_template](https://flask.palletsprojects.com/en/2.3.x/tutorial/templates/) function.
 
 The Flask application was set up with a **simple route defined for the root URL ('/')**. When accessing this route, the application returns a plain text response of "Hello!".
 
@@ -78,9 +78,10 @@ def hello():
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
 ```
+Browser
 ![hello_img](/back_end/assets/img/readme/hello_1st_route.png)
 
-setting Docker Python Flask
+commit: setting Docker Python Flask
 ```
 ac04ed4f0cd8956f12deb9a01bc13a86c243fb4f
 ```
@@ -157,8 +158,13 @@ Home
 
 {% endblock %}
 ```
+Browser
 ![hello_img](/back_end/assets/img/readme/hello_jinja.png)
 
+commit: template folder: {% extends "base.html" %}
+```
+b63566182f7b77f42a982e4614267fdd0f7fe44e
+```
 Now, instead of `return`ing a simple textual response, the main route ('/') has been modified to render an HTML template called home.html located in the home directory. <br>
 When a user accesses the main route, the browser will display the contents of the HTML `return`ed by the template. This allows objects in the DOM (Document Object Model) to be displayed within the browser.
 
