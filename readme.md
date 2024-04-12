@@ -4,13 +4,14 @@ This project is an example of how to use Docker to create and distribute a Pytho
 # 1st step - Setting Project
 ## Project Files
 First, the directory must be created:
-
-back_end|<br>
-        |-Dockerfile<br>
-        |-main.py<br>
-        |-requirements.txt<br>
-docker-compose.yml<br>
-readme.md<br>
+```
+back_end|
+        |-Dockerfile
+        |-main.py
+        |-requirements.txt
+docker-compose.yml
+readme.md
+```
 
 > [!TIP]
 > you can call the main folders your own but usually use 'back_end' , 'front_end'....
