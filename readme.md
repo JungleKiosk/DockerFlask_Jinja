@@ -3,10 +3,6 @@ This project is an example of how to use Docker to create and distribute a Pytho
 
 # 1st step - Setting Project
 ## Project Files
-commit: initial commit
-```
-d776e8a2ca1ab3ba5c81a26c6c352720491f5020
-```
 First, the directory must be created:
 
 back_end|
@@ -34,7 +30,7 @@ The requirements.txt file lists all the Python dependencies needed to run the Fl
 ## docker-file.yml
 The file docker-compose.yml is used to define and manage the Docker services within the project. In this case, the file contains two services:
 
-> **Web service:** This service defines a ****container** for the Flask web application. It uses the Dockerfile located in the back_end directory to create the **Docker image**.<br>
+> **Web service:** This service defines a **container** for the Flask web application. It uses the Dockerfile located in the back_end directory to create the **Docker image**.<br>
 It mounts the back_end directory as a **volume** inside the **container** to allow access to the application's source code. It exposes port 5000 of the **container** to allow access to the web application.<br>
 It also defines some environment variables that the Flask application will use for configuration, such as DEBUG, PORT and the credentials for the PostgreSQL database.
 
@@ -54,5 +50,32 @@ The requirements.txt file lists all the Python dependencies required for the Fla
 
 In summary, the docker-compose.yml file coordinates the orchestration of Docker services, while the Dockerfile is used to create the Docker image for the Flask application, which includes the source code (main.py) and dependencies (requirements.txt). Once the services are started with Docker Compose, the Flask application will be accessible at http://localhost:5000.
 
+commits: <br>
+initial commit
+```
+d776e8a2ca1ab3ba5c81a26c6c352720491f5020
+```
+setting Docker Python Flask
+```
+ac04ed4f0cd8956f12deb9a01bc13a86c243fb4f
+```
+
+# 2nd step - Flask routes & Template imports
+After setting up the basic Flask application, the next step was to create a route and render it using the `render_template` function.
+
+The Flask application was set up with a **simple route defined for the root URL ('/')**. When accessing this route, the application returns a plain text response of "Hello!".
 
 
+```
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return ('Hello!')
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000, debug=True)
+```
+![hello_img](/back_end/assets/img/readme/hello_1st_route.png)
