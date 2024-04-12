@@ -5,7 +5,6 @@ Home
 {% endblock %}
 {% include "partials/navbar.html" %}
 
-
 {% block content %}
 
 <style>
@@ -16,63 +15,60 @@ a{
 
 </style>
 
-<main class="jumbotron ">
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-12 col-lg-12">
-                <h1 class="text-center">FLASK 🐍</h1>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam odio laborum cumque at nostrum aut
-                    nemo
-                    illo odit suscipit quae minima minus distinctio nobis recusandae dicta facere, vero, esse sunt.</p>
-            </div>
-            <div class="col-3 text-center">
-
-                <button class="btn rounded-pill btn-outline-secondary m-3" type="submit">
-                    <a href="">COSMOS</a>
-                </button>
-
-            </div>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-12 jumbotron">
+            <h1 class="text-center">FLASK 🐍</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Veniam odio laborum cumque at nostrum aut
+                nemo
+                illo odit suscipit quae minima minus distinctio nobis
+                recusandae dicta facere, vero, esse sunt.</p>
         </div>
-    </div>
-</main>
+        <div class="col-3 text-center">
 
-<main>
-
-
-    <div class="container-fluid m-5">
-        <div class="row justify-content-center">
-            <div class="col-2">
-                <div class="card text-body text-center bg-dark">
-                    <h1><a href="/items">Animals</a></h1>
-                    <h4>🦥</h4>
-                </div>
-            </div>
-
-            <div class="col-2">
-                <div class="card text-body text-center bg-dark">
-                    <h1><a href="">Cyber</a></h1>
-                    <h4>🤖</h4>
-                </div>
-            </div>
-
-            <div class="col-2">
-                <div class="card text-body text-center bg-dark">
-                    <h1><a href="">Plants</a></h1>
-                    <h4>🌳</h4>
-                </div>
-            </div>
-
-            <div class="col-2">
-                <div class="card text-body text-center bg-dark">
-                    <h1><a href="">Urban</a></h1>
-                    <h4>🍕</h4>
-                </div>
-            </div>
+            <button class="btn rounded-pill btn-outline-secondary m-3"
+                type="submit">
+                <a href>COSMOS</a>
+            </button>
 
         </div>
     </div>
+    
+    <div class="row justify-content-center mt-5">
+        <div class="col-2">
+            <div class="card text-body text-center bg-dark">
+                <h1><a href="/items">Animals</a></h1>
+                <h4>🦥</h4>
+            </div>
+        </div>
 
-</main>
+        <div class="col-2">
+            <div class="card text-body text-center bg-dark">
+                <h1><a href>Cyber</a></h1>
+                <h4>🤖</h4>
+            </div>
+        </div>
+
+        <div class="col-2">
+            <div class="card text-body text-center bg-dark">
+                <h1><a href>Plants</a></h1>
+                <h4>🌳</h4>
+            </div>
+        </div>
+
+        <div class="col-2">
+            <div class="card text-body text-center bg-dark">
+                <h1><a href>Urban</a></h1>
+                <h4>🍕</h4>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+    
 
 
 {% endblock %}
