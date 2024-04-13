@@ -1,5 +1,4 @@
 # 🌊🐋🌊 Docker 🌳Flask🐍 PostgreSQL 🌴🐘🌴
-This project is an example of how to use Docker to create and distribute a Python web application based on [Flask](https://flask.palletsprojects.com/en/3.0.x/).
 
 # ⛩️render_template Jinja⛩️ from scratch 
 
@@ -22,7 +21,8 @@ readme.md
 The docker-compose.yml file is used to define the services that will constitute the Docker environment for our project. In this file, the configurations of the Docker services are specified, such as the images to be used, environment variables, exposed ports and other network configurations.
 
 2. Dockerfile<br>
-The Dockerfile contains instructions for creating the Docker image that will host the Flask application. Within this file, dependencies, the execution environment and the operations required to configure and start the application are defined.
+The Dockerfile contains instructions for creating the Docker image that will host the [Flask](https://flask.palletsprojects.com/en/3.0.x/).
+ application. Within this file, dependencies, the execution environment and the operations required to configure and start the application are defined.
 
 3. main.py<br>
 The main.py file contains the main source code of the Flask application. Here we define the application's routes, business logic and all the functions needed to handle incoming HTTP requests and generate the corresponding responses.
