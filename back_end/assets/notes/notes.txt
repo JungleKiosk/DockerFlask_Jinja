@@ -16,3 +16,29 @@ def get_item():
 
 - [] 
 - []
+
+
+---------------------------------------
+
+class Users(db.Model):
+    __tablename__ = 'users'
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    name = db.Column(db.String(100), nullable=False)
+    surname = db.Column(db.String(100), nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    cosmo = db.Column(db.String(100), nullable=False)
+    password = db.Column(db.String(100), nullable=False)
+    #password_hash = db.Column(db.String(60), nullable=False)
+    #roles = db.Column(db.String(100), nullable=True)
+
+    def __init__(self, name, surname, email, cosmo, password):
+        self.name = name
+        self.surname = surname
+        self.email = email
+        self.cosmo = cosmo
+        self.password = password
+        #self.password_hash = password_hash
+        #self.roles = roles
+
+    #def check_password(self, password):
+        #return check_password_hash(self.password_hash, password)
