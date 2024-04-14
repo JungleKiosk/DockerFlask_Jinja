@@ -7,6 +7,8 @@
 First, the directory must be created:
 ```
 back_end|
+        |-assets
+        |-templates
         |-Dockerfile
         |-main.py
         |-requirements.txt
